@@ -1,19 +1,19 @@
 module Api
   class TasksController < ApplicationController
   
-    def index
+    def index # shows all of the tasks that were created 
       
       tasks = Task.all 
       render json: tasks
     end
     
-    def show
+    def show # shows a specific task
 
       task = Task.find(params[:id])
       render json: task
     end
 
-    def create
+    def create #creates a new task
 
       task = Task.new(task_params)
       if task.save
@@ -23,7 +23,7 @@ module Api
       end
     end
 
-    def update
+    def update # updates an excisting task
 
       task = Task.find(params[:id])
       if task.update_attributes(task_params)
@@ -33,7 +33,7 @@ module Api
       end
     end
 
-    def destroy
+    def destroy # deletes a specific task
       
       task = Task.find(params[:id])
       task.destroy
@@ -41,8 +41,8 @@ module Api
     end
 
     private 
-    
-    def task_params
+
+    def task_params # a shorthand for the task params to make the code cleaner
       params.require(:task).permit(:name, :description, :est_complete_time, :complete_by, :status)
     end
 

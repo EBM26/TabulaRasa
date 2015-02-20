@@ -1,7 +1,7 @@
 module Api 
   class ListsController < ApplicationController
 
-    def index
+    def index # indexes all of the lists
 
       lists = List.all
       render json: lists
