@@ -19,13 +19,16 @@ describe "Tasks API", :type => :request do
     expect(response).to have_http_status 200
     expect(response.body).to eq(task.to_json)
   end
-
-  it "creates a new task" do 
+  
+  it "updates a specific task" do 
     task_attributes = {task: {name: "do homework", description: "do your homework", est_complete_time: 4.3, complete_by: Time.now, status: true}}.to_json
-    
-    post '/api/tasks', task_attributes, request_headers
-    puts(task_attributes)
+    patch "/api/tasks/#{task.id}", task_attributes, request_headers
+    puts response.body
     expect(response).to have_http_status 200
+  end
 
+  it "destroys a specific task" do 
+    delete "/api/tasks/#{task.id}"
+    expect(response).to have_http_status 200
   end
 end
