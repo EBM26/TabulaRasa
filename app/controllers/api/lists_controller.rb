@@ -4,16 +4,18 @@ module Api
     def index # indexes all of the lists
 
       lists = List.all
-      render json: lists
+      render json: lists, 
+          include: {items: {}} # if you dont want to see items in list index delete this "include and the comma"
     end
 
-    def show
+    def show # shows an individual list
       
       list = List.find(params[:id])
-      render json: list
+      render json: list,
+            include: {items: {}} # includes items array to each
     end
 
-    def create
+    def create # creates a new list
 
       list = List.new(list_params)
       if list.save
@@ -25,7 +27,7 @@ module Api
       end
     end
 
-    def update
+    def update # updates list name
 
       list = List.find(params[:id])
       if list.update_attributes(list_params)
@@ -35,14 +37,14 @@ module Api
       end
     end
 
-    def destroy
+    def destroy # deletes list
       
       list = List.find(params[:id])
       list.destroy
       render json: list
     end
 
-    def list_params
+    def list_params # shorthand for list params
       params.require(:list).permit(:name)
     end
   end

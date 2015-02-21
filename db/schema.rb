@@ -22,9 +22,12 @@ ActiveRecord::Schema.define(version: 20150220015938) do
     t.date     "complete_by"
     t.string   "link"
     t.string   "notes"
+    t.integer  "list_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "items", ["list_id"], name: "index_items_on_list_id", using: :btree
 
   create_table "lists", force: :cascade do |t|
     t.string   "name"
@@ -42,4 +45,5 @@ ActiveRecord::Schema.define(version: 20150220015938) do
     t.datetime "updated_at",        null: false
   end
 
+  add_foreign_key "items", "lists"
 end
