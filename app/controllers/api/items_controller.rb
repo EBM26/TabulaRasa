@@ -1,19 +1,19 @@
 module Api
   class ItemsController < ApplicationController
     
-    def index
+    def index # shows all items 
       
       items = Item.all 
       render json: items
     end
     
-    def show
+    def show # shows a specific item
 
       item = Item.find(params[:id])
       render json: item
     end
 
-    def create
+    def create # creates an item that belongs to a particular list
       
       list = List.find(params[:list_id])
       list.items << Item.new(item_params)
@@ -26,7 +26,7 @@ module Api
       end
     end
 
-    def update
+    def update # updates an item
 
       item = Item.find(params[:id])
       if item.update_attributes(item_params)
@@ -36,14 +36,14 @@ module Api
     end
   end
 
-    def destroy
+    def destroy # deletes an item
 
       item = Item.find(params[:id])
       item.destroy
       render json: item
     end
 
-    def item_params
+    def item_params # shorthand for item params
       params.require(:item).permit(:name, :description, :complete_by, :link, :notes)
     end
 

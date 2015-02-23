@@ -1,0 +1,15 @@
+<h1>Add a List:</h1>
+
+<form ng-submit="createList()">
+<p>
+  Title:
+  <input type="text" name="name" ng-model="list.name">
+</p>
+<button>Create</button>
+</form>
+
+<form ng-submit="createItem()">
+Item:
+<input type="text" name="name" ng-model="item.name">
+<button>Create</button>
+</form>
