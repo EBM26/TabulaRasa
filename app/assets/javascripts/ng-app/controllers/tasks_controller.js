@@ -1,4 +1,17 @@
-angular 
+angular
+  .module('tabulaApp')
+  .factory("Task", TasksFactory);
+
+  function TasksFactory($resource) {
+    return $resource('api/tasks/:id', {id: '@id'},
+      {
+        'update': { method: 'PUT'}
+      }
+
+      );
+  }
+
+  angular 
   .module("tabulaApp")
   .controller("tasksController", tasksController);
 
@@ -26,18 +39,7 @@ angular
 
 
 
-angular
-  .module('tabulaApp')
-  .factory("Task", TasksFactory);
 
-  function TasksFactory($resource) {
-    return $resource('api/tasks/:id', {id: '@id'},
-      {
-        'update': { method: 'PUT'}
-      }
-
-      );
-  }
 
 
 
