@@ -21,6 +21,12 @@ angular
           url:"/list/new", 
           templateUrl: "lists/new.html", 
           controller: newListController
-        });
+        })
 
+       .state("userhome",{
+        url:"", 
+       })
+
+
+       ;
      })

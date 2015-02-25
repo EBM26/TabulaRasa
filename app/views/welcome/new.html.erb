@@ -1,0 +1,28 @@
+<h1>Welcome, you made it!</h1>
+
+<%= form_for :user, url: "/signup/login" do |f| %>
+   
+        <%= f.text_field :name, placeholder: 'enter your name' %><br>
+        <%= f.text_field :email, placeholder: 'enter your email' %><br>
+        <%= f.password_field :password, placeholder: 'password' %><br>
+        <%= f.password_field :password_confirmation, placeholder: 'confirm your password' %><br></br>
+        <%= button_tag(type: 'submit') do %>
+        <p>Sign Me Up!</p>
+        <% end %>
+
+        <% end %>
+
+
+        <div>
+    <div>
+      <%= form_for :user, url: "/login" do |f| %>
+
+      <%= f.text_field :email, placeholder: 'enter your email' %><br>
+      <%= f.password_field :password, placeholder: 'password' %><br>
+      <%= button_tag(type: 'submit') do %>
+      <p>Log Me In!</p>
+      <% end %>
+
+      <% end %>
+    </div>
+  </div>

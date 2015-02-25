@@ -1,21 +1,25 @@
 class SessionsController < ApplicationController
 
   def new
-    
+
   end
   
-   def create     
-    #What data comes back from OmniAuth?     
-    @auth = request.env["omniauth.auth"]
-    #Use the token from the data to request a list of calendars
-    @token = @auth["credentials"]["token"]
-    client = Google::APIClient.new
-    client.authorization.access_token = @token
-    service = client.discovered_api('calendar', 'v3')
-    @result = client.execute(
-      :api_method => service.calendar_list.list,
-      :parameters => {},
-      :headers => {'Content-Type' => 'application/json'})
+  def create  
+
+    user = User.find_by(email: params[:user][:email])
+
+    if user && user.authenticate(params[:user][:password])
+      session[:user_id] = user.id.to_s
+      redirect_to root_path
+    else
+      puts "We're in the else block"
+      redirect_to signup_login_path 
+    end   
   end
-  
+
+  def destroy
+   session[:user_id] = nil
+   redirect_to signup_login_path
+ end
+
 end
