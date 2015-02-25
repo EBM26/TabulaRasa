@@ -7,7 +7,7 @@ angular
       }
 
       );
-  }];
+  }]);
 
   angular 
   .module("tabulaApp")
