@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
+#gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
 gem 'nifty-generators'
 gem 'google-api-client', :require => 'google/api_client'
 gem 'omniauth', '1.1.1'
