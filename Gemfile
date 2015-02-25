@@ -16,9 +16,11 @@ gem 'coffee-rails', '~> 4.1.0'
 
 #gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
 gem 'nifty-generators'
-gem 'google-api-client', :require => 'google/api_client'
-gem 'omniauth', '1.1.1'
-gem 'omniauth-google-oauth2', :git => 'https://github.com/zquestz/omniauth-google-oauth2.git'
+#gem 'google-api-client', :require => 'google/api_client'
+#gem 'omniauth', '1.1.1'
+#gem 'omniauth-google-oauth2', :git => 'https://github.com/zquestz/omniauth-google-oauth2.git'
+
+gem 'bootstrap-sass', '~> 3.3.1'
 
 gem 'figaro'
 
