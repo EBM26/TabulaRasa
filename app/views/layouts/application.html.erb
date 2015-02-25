@@ -7,6 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="tabulaApp">
+<div>
+<button type="button">
+<% if current_user %> <!-- login button -->
+  <%= "Logged in as " + current_user.name + ' | ' %><%= link_to 'Logout', logout_path %>
+
+  <% else %>
+  <%= link_to 'Login', signup_login_path %> | <%= link_to 'Sign Up', signup_login_path %>
+  <% end %>
+  </button>
+ </div><br>
+
 
 <%= yield %>
 

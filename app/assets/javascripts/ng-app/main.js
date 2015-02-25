@@ -1,5 +1,5 @@
 angular 
-    .module("tabulaApp", ['ngResource', 'ui.router', 'templates']); // naming the ng-app, the controller, using the ui-router and templates
+    .module("tabulaApp", ['ngResource',  'ui.router', 'templates']); // naming the ng-app, the controller, using the ui-router and templates
     
 
 angular
@@ -11,20 +11,21 @@ angular
 
       $stateProvider
 
-       .state("lists", {
-          url:"/lists", 
-          templateUrl: "lists/index.html", 
-          controller: listsController
-        })
+       // .state("lists", {
+       //    url:"/lists", 
+       //    templateUrl: "lists/index.html", 
+       //    controller: listsController
+       //  })
 
-       .state("newlist", {
-          url:"/list/new", 
-          templateUrl: "lists/new.html", 
-          controller: newListController
-        })
+       // .state("newlist", {
+       //    url:"/list/new", 
+       //    templateUrl: "lists/new.html", 
+       //    controller: newListController
+       //  })
 
        .state("userhome",{
         url:"", 
+        templateUrl: "userhome.html"
        })
 
 

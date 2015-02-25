@@ -15,7 +15,7 @@ module Api
 
     def create #creates a new task
 
-      task = Task.new(task_params)
+      task = Task.new(params.require(:task).permit(:name, :description, :est_complete_time, :complete_by, :status))
       if task.save
         render json: task
       else

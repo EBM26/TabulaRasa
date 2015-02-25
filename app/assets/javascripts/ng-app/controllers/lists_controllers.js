@@ -5,6 +5,7 @@ angular
    function listsController($scope, $http, $resource, $state, List, Item) {
     List.query(function(data){
         $scope.lists = data;
+        
     });
 
   }
@@ -19,7 +20,7 @@ angular
         new List (
           $scope.list
         ).$save(function(data) {
-          $state.go("lists");
+          $state.go("");
         });
       }
     }
@@ -33,7 +34,7 @@ angular
           new Item (
             $scope.item
             ).$save(function(data){
-              $state.go("lists");
+              $state.go("");
             });
         }
       }

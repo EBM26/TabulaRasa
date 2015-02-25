@@ -1,0 +1,70 @@
+<h1>this is my userhome page</h1>
+
+<h3>Your List of Lists</h3>
+
+ <div ng-controller="listsController">
+<div ng-repeat="list in lists">
+ <h3>{{ list.name}}</h3>
+
+ </div> 
+ </div>
+
+
+ <h3>Your Daily Tasks</h3>
+ <div ng-controller="tasksController">
+ <div ng-repeat="task in tasks">
+   <h3>{{task.name}}</h3>
+   <h3>{{task.description}}</h3>
+   <h3>{{task.est_complete_time}}</h3>
+   <h3>{{task.complete_by}}</h3>
+ </div>
+ </div>
+
+
+
+ <h3>Add a List:</h3>
+<div ng-controller="newListController">
+<form ng-submit="createList()">
+<p>
+  Title:
+  <input type="text" name="name" ng-model="list.name">
+</p>
+<button>Create</button>
+</form>
+
+
+</div>
+
+
+<h3>Add a Task</h3>
+<div ng-controller="newTaskController">
+<form ng-submit="createTask()">
+<p>
+  Name:
+  <input type="text" name="name" ng-model="task.name">
+</p>
+<p>
+  Description:
+  <input type="text" name="description" ng-model="task.description">
+</p>
+<p>
+  Estimated Completion Time:
+  <input type="number" step="any" name="est_complete_time" ng-model="task.est_complete_time">
+</p>
+<p>
+  Date Completed By:
+  <input type="date" name="complete_by" ng-model="task.complete_by">
+</p>
+
+<button>Create</button>
+</form> 
+</div>
+
+
+
+
+
+
+
+
+
