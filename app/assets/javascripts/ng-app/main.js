@@ -4,7 +4,7 @@ angular
 
 angular
   .module("tabulaApp")
-  .config(function($httpProvider, $stateProvider, $urlRouterProvider) { // creating the X-CSRF-Token for security
+  .config(["$httpProvider", "$stateProvider", "$urlRouterProvider", function($httpProvider, $stateProvider, $urlRouterProvider) { // creating the X-CSRF-Token for security
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = 
       $('meta[name=csrf-token]').attr('content');
 
@@ -30,4 +30,4 @@ angular
 
 
        ;
-     });
+     }]);
