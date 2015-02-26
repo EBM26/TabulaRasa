@@ -11,12 +11,23 @@ angular
 
 angular
   .module("tabulaApp")
-  .controller("listsController", ["$scope", "$http", "$resource", "$state", "List", function ($scope, $http, $resource, $state, List, Item) {
+  .controller("listsController", ["$scope", "$http", "$resource", "$state", "List", "$modal", function ($scope, $http, $resource, $state, List, $modal) {
     List.query(function(data){
         $scope.lists = data;
 
     });
-
+      $scope.openAddItem = function(id) {
+        $modal.open({
+      templateUrl: 'items/new.html',
+      controller: 'newItemController',
+       resolve: {
+        list_id: function () {
+          return id;
+        }
+      }
+      
+    });
+    }
   }]);
 
   angular

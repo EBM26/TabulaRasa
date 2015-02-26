@@ -1,0 +1,23 @@
+<div class="add-tasks-box"> <!-- new tasks ng-controller div beggining-->
+<h3>Add a Task</h3>
+  <form ng-submit="createTask()">
+    <p>
+      Name:
+      <input type="text" name="name" ng-model="task.name">
+    </p>
+    <p>
+      Description:
+      <input type="text" name="description" ng-model="task.description">
+    </p>
+    <p>
+      Estimated Completion Time:
+      <input type="number" step="any" name="est_complete_time" ng-model="task.est_complete_time">
+    </p>
+    <p>
+      Date Completed By:
+      <input type="date" name="complete_by" ng-model="task.complete_by">
+    </p>
+     <button>Create</button>
+  </form> 
+</div> <!-- new tasks ng-controller div end-->
+

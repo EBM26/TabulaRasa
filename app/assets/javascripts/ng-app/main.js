@@ -1,5 +1,5 @@
 angular 
-    .module("tabulaApp", ['ngResource',  'ui.router', 'templates']); // naming the ng-app, the controller, using the ui-router and templates
+    .module("tabulaApp", ['ngResource',  'ui.router', 'templates', 'ui.bootstrap']); // naming the ng-app, the controller, using the ui-router and templates
     
 
 angular
@@ -15,7 +15,13 @@ angular
         url:"", 
         templateUrl: "userhome.html"
        })
+      
+       .state("itemsnew", {
+          url:"/list/{listId}/items/new", // pay attention to the fact that this has list singular and not plural 
+          templateUrl: "items/new.html"
 
+        })
 
        ;
      }]);
+
