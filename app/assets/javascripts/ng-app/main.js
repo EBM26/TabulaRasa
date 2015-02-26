@@ -11,18 +11,6 @@ angular
 
       $stateProvider
 
-       // .state("lists", {
-       //    url:"/lists", 
-       //    templateUrl: "lists/index.html", 
-       //    controller: listsController
-       //  })
-
-       // .state("newlist", {
-       //    url:"/list/new", 
-       //    templateUrl: "lists/new.html", 
-       //    controller: newListController
-       //  })
-
        .state("userhome",{
         url:"", 
         templateUrl: "userhome.html"

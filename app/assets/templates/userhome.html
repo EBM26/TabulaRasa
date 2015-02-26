@@ -1,66 +1,71 @@
-<h1>this is my userhome page</h1>
+<h1 class="text-center">Page Title Here</h1><br><br>
 
-<h3>Your List of Lists</h3>
+<div class="container"> <!-- div of the entire page beggining -->
+<div class="row"> <!-- div row of indexes beggining -->
+<div class="col-md-4 lists-index-box" ng-controller="listsController"> <!-- list index box start-->
+  <h3>Your List of Lists</h3>
+    <div ng-repeat="list in lists"> <!-- lists ng-repeat div beggining-->
+     <h3>{{ list.name}}</h3>
 
- <div ng-controller="listsController">
-<div ng-repeat="list in lists">
- <h3>{{ list.name}}</h3>
+   </div> <!-- lists ng-repeat div end-->
+</div> <!-- list index box finish-->
 
- </div> 
- </div>
+<div class=" col-md-4 mantra-box"> <!-- matnra div box beggining -->
+  <p>Insert your mantra here</p>
+  <p>Insert your background picture here</p>
+</div> <!-- matnra div box end -->
 
-
- <h3>Your Daily Tasks</h3>
- <div ng-controller="tasksController">
- <div ng-repeat="task in tasks">
+<div class="col-md-4 tasks-index-box" ng-controller="tasksController"> <!-- task index box start-->
+<h3>Your Daily Tasks</h3>
+ <div ng-repeat="task in tasks"> <!-- tasks ng-repeat div beggining-->
    <h3>{{task.name}}</h3>
    <h3>{{task.description}}</h3>
    <h3>{{task.est_complete_time}}</h3>
    <h3>{{task.complete_by}}</h3>
- </div>
- </div>
+ </div> <!-- tasks ng-repeat div end-->
+</div> <!-- task index box end-->
 
 
-
- <h3>Add a List:</h3>
-<div ng-controller="newListController">
-<form ng-submit="createList()">
-<p>
-  Title:
-  <input type="text" name="name" ng-model="list.name">
-</p>
-<button>Create</button>
-</form>
+</div> <!-- div row of indexes end -->
 
 
-</div>
+<div class="add-list-box" ng-controller="newListController"> <!-- add list box start -->
+<h3>Add a List:</h3>
+  <form ng-submit="createList()">
+    <p>
+      Title:
+      <input type="text" name="name" ng-model="list.name">
+    </p>
+    <button>Create</button>
+  </form>
+</div> <!-- add list box end -->
 
-
+<div class="add-tasks-box" ng-controller="newTaskController"> <!-- new tasks ng-controller div beggining-->
 <h3>Add a Task</h3>
-<div ng-controller="newTaskController">
-<form ng-submit="createTask()">
-<p>
-  Name:
-  <input type="text" name="name" ng-model="task.name">
-</p>
-<p>
-  Description:
-  <input type="text" name="description" ng-model="task.description">
-</p>
-<p>
-  Estimated Completion Time:
-  <input type="number" step="any" name="est_complete_time" ng-model="task.est_complete_time">
-</p>
-<p>
-  Date Completed By:
-  <input type="date" name="complete_by" ng-model="task.complete_by">
-</p>
-
-<button>Create</button>
-</form> 
-</div>
+  <form ng-submit="createTask()">
+    <p>
+      Name:
+      <input type="text" name="name" ng-model="task.name">
+    </p>
+    <p>
+      Description:
+      <input type="text" name="description" ng-model="task.description">
+    </p>
+    <p>
+      Estimated Completion Time:
+      <input type="number" step="any" name="est_complete_time" ng-model="task.est_complete_time">
+    </p>
+    <p>
+      Date Completed By:
+      <input type="date" name="complete_by" ng-model="task.complete_by">
+    </p>
+     <button>Create</button>
+  </form> 
+</div> <!-- new tasks ng-controller div end-->
 
 
+
+</div> <!-- div of the entire page end -->
 
 
 
