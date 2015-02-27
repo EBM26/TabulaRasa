@@ -3,7 +3,7 @@ module Api
 
     def index # indexes all of the lists
 
-      lists = List.where(user_id: current_user.id).order('name ASC') # shows lists that belong to proper user
+      lists = List.where(user_id: current_user.id) # shows lists that belong to proper user
       render json: lists, 
           include: {items: {}} 
     end

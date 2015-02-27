@@ -3,7 +3,7 @@ module Api
   
     def index # shows all of the tasks that were created 
       
-      tasks = Task.where(user_id: current_user.id).order('name ASC')
+      tasks = Task.where(user_id: current_user.id)
       render json: tasks
     end
     
