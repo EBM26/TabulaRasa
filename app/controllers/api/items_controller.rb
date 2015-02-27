@@ -3,7 +3,7 @@ module Api
     
     def index # shows all items 
       
-      items = Item.where(list_id: params[:list_id]) # finds items in a specific list
+      items = Item.where(list_id: params[:list_id]).order('name ASC') # finds items in a specific list
       render json: items
     end
     

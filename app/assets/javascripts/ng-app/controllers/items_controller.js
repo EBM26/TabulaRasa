@@ -20,8 +20,8 @@ angular // controller that shows item index with the list id special to it
 
     // deletes the specific itemw
     $scope.deleteItem = function(item) { 
-      item.$delete({ list_id: list_id, id: item.id }, function(){
-        Item.query({ list_id: list_id}, function(data){
+      item.$delete({ list_id: list.id, id: item.id }, function(){
+        Item.query({ list_id: list.id}, function(data){
           $scope.items = data;
         });
       });
