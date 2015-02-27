@@ -8,7 +8,7 @@
 
   <button ng-click="openAddList()">Add a List</button>
     <div ng-repeat="list in lists | orderBy: 'name' | filter:s "> <!-- lists ng-repeat div beggining-->
-   <a ng-click="openShowItem(list)"><h3>{{ list.name}}</h3></a>  
+   <a ng-click="openShowItem(list)"><h3>{{$index+1}}. {{ list.name}}</h3></a>  
    <button ng-click="openAddItem(list.id)">Add Items to list</button>
    <button ng-click="deleteList(list)">Delete</button>
 
@@ -25,7 +25,7 @@
 <button ng-click="openAddTask()">Add a Task</button>
  <div ng-repeat="task in tasks | orderBy: 'complete_by'"> <!-- tasks ng-repeat div beggining-->
    
- <h3><a ng-click="openShowTask(task.id)">{{task.name}}</a></h3>
+ <h3><a ng-click="openShowTask(task.id)">{{$index+1}}. {{task.name}}</a></h3>
  <button ng-click="deleteTask(task)">Task Complete</button>
  </div> <!-- tasks ng-repeat div end-->
 </div> <!-- task index box end-->
