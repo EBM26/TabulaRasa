@@ -11,15 +11,16 @@ angular
 
   angular // controller that shows the index of tasks
   .module("tabulaApp")
-  .controller("tasksController", ["$scope", "$http", "$resource", "$state", "Task", "$modal", function ($scope, $http, $resource, $state, Task, $modal) {
+  .controller("tasksController", ["$rootScope", "$scope", "$http", "$resource", "$state", "Task", "$modal", 
+                                  function ($rootScope, $scope, $http, $resource, $state, Task, $modal) {
     Task.query(function(data){
-      $scope.tasks = data;
+      $rootScope.tasks = data; // $rootScope allows the the tasks array method to be accessed in the second controller in order to have the created task show right away
     });
 
     $scope.deleteTask = function(task) { // function that deletes a task
       task.$delete(function(){
         Task.query(function(data){
-          $scope.tasks = data;
+          $rootScope.tasks = data;
         });
       });
     }
@@ -56,13 +57,15 @@ angular // controller to get a specifict task
 
 angular // controller that creates a new task
   .module("tabulaApp")
-  .controller("newTaskController", ["$scope", "$http", "$state", "$resource", "$stateParams", "Task", "$modalInstance", function ($scope, $http, $state, $resource, $stateParams, Task, $modalInstance){
+  .controller("newTaskController", ["$rootScope", "$scope", "$http", "$state", "$resource", "$stateParams", "Task", "$modalInstance", 
+                                    function ($rootScope, $scope, $http, $state, $resource, $stateParams, Task, $modalInstance){
 
     $scope.createTask = function(){
       new Task (
         $scope.task
       ).$save(function(data) {
         $modalInstance.dismiss('created'); // closes the modal after task is created
+        $rootScope.tasks.push(data);
       });
     };
   }]);

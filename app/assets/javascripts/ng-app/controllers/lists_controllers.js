@@ -11,15 +11,19 @@ angular
 
 angular // controller that shows the list index. The array of arguments with quotations is so the angular code will not break when midified
   .module("tabulaApp")
-  .controller("listsController", ["$scope", "$http", "$resource", "$state", "List", "$modal", function ($scope, $http, $resource, $state, List, $modal) {
+  .controller("listsController", ["$rootScope", "$scope", "$http", "$resource", "$state", "List", "$modal",
+                                  function ($rootScope, $scope, $http, $resource, $state, List, $modal) {
+
+
+
     List.query(function(data){
-        $scope.lists = data;
+        $rootScope.lists = data; // $rootScope allows the the lists array method to be accessed in the second controller in order to have the created list show right away
     });
 
     $scope.deleteList = function(list) {
       list.$delete(function(){
         List.query(function(data){
-          $scope.lists = data;
+          $rootScope.lists = data;
         });
       });
     }
@@ -31,17 +35,17 @@ angular // controller that shows the list index. The array of arguments with quo
       });
     };
 
-      $scope.openAddItem = function(id) { // modal code that opens and creates new items
-        $modal.open({
-      templateUrl: 'items/new.html', // the modal template
-      controller: 'newItemController', // the controller the modal is using
-       resolve: {
+    $scope.openAddItem = function(id) { // modal code that opens and creates new items
+      $modal.open({
+        templateUrl: 'items/new.html', // the modal template
+        controller: 'newItemController', // the controller the modal is using
+      resolve: {
         list_id: function () {
           return id;
         }
       }
-       });
-    };
+    });
+  };
 
       $scope.openShowItem = function(id) { // modal code that shows the items inside each list
         $modal.open({
@@ -60,13 +64,15 @@ angular // controller that shows the list index. The array of arguments with quo
 
   angular // controller that creates a new list
     .module("tabulaApp")
-    .controller("newListController", ["$scope", "$http", "$state", "$resource", "$stateParams", "List", "$modalInstance", function ($scope, $http, $state, $resource, $stateParams, List, $modalInstance){
+    .controller("newListController", ["$rootScope", "$scope", "$http", "$state", "$resource", "$stateParams", "List", "$modalInstance",
+                                      function ($rootScope, $scope, $http, $state, $resource, $stateParams, List, $modalInstance){
 
       $scope.createList = function() {
         new List (
           $scope.list
         ).$save(function(data) {
           $modalInstance.dismiss('created');
+          $rootScope.lists.push(data);
         });
       }
     }]);
