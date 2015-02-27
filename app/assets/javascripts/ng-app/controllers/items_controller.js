@@ -10,8 +10,8 @@ angular
 
 angular
   .module("tabulaApp")
-  .controller("itemsController", ["$scope", "$http", "$resource", "$state", "Item", function ($scope, $http, $resource, $state, Item) {
-    Item.query(function(data){
+  .controller("itemsController", ["$scope", "$http", "$resource", "$state", "Item","$modalInstance", "list_id", function ($scope, $http, $resource, $state, Item, $modalInstance, list_id) {
+    Item.query({ list_id: list_id },function(data){
         $scope.items = data;
 
     });

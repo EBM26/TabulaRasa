@@ -25,9 +25,22 @@ angular
           return id;
         }
       }
-      
-    });
+       });
     }
+
+      $scope.openShowItem = function(id) {
+        $modal.open({
+          templateUrl: 'items/show.html',
+          controller: 'itemsController',
+          resolve: {
+            list_id: function(){
+              return id;
+            }
+          }
+        });
+      };
+      
+   
   }]);
 
   angular

@@ -6,6 +6,8 @@
   <h3><u>The Mother List</u></h3>
     <div ng-repeat="list in lists"> <!-- lists ng-repeat div beggining-->
    <a ng-click="openAddItem(list.id)"><h3>{{ list.name}}</h3></a>  
+   <button ng-click="openShowItem(list.id)">Show list items</button>
+
 
    </div> <!-- lists ng-repeat div end-->
 </div> <!-- list index box finish-->

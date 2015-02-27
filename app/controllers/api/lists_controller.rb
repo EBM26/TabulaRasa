@@ -5,7 +5,7 @@ module Api
 
       lists = List.where(user_id: current_user.id)
       render json: lists, 
-          include: {items: {}} # if you dont want to see items in list index delete this "include and the comma"
+          include: {items: {}} # if you dont want to see items in list index delete this include block and the comma
     end
 
     def show # shows an individual list
