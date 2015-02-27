@@ -5,8 +5,8 @@
 <div class="col-md-4 lists-index-box" ng-controller="listsController"> <!-- list index box start-->
   <h3><u>The Mother List</u></h3>
     <div ng-repeat="list in lists"> <!-- lists ng-repeat div beggining-->
-   <a ng-click="openAddItem(list.id)"><h3>{{ list.name}}</h3></a>  
-   <button ng-click="openShowItem(list.id)">Show list items</button>
+   <a ng-click="openShowItem(list.id)"><h3>{{ list.name}}</h3></a>  
+   <button ng-click="openAddItem(list.id)">Add Items to list</button>
 
 
    </div> <!-- lists ng-repeat div end-->
@@ -20,8 +20,8 @@
 <div class="col-md-4 tasks-index-box" ng-controller="tasksController"> <!-- task index box start-->
 <h3><u>Your Daily Tasks</u></h3>
  <div ng-repeat="task in tasks"> <!-- tasks ng-repeat div beggining-->
-   <h3>{{task.name}}</h3>
- <button ng-click="openShowTask(task.id)">Show Task Details</button>
+   
+ <h3><a ng-click="openShowTask(task.id)">{{task.name}}</a></h3>
  <button ng-click="deleteTask(task)">Delete</button>
  </div> <!-- tasks ng-repeat div end-->
  <button ng-click="openAddTask()">Add a Task</button>
