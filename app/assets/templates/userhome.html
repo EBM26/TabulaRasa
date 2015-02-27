@@ -19,9 +19,8 @@
 <h3><u>Your Daily Tasks</u></h3>
  <div ng-repeat="task in tasks"> <!-- tasks ng-repeat div beggining-->
    <h3>{{task.name}}</h3>
-   <h3>{{task.description}}</h3>
-   <h3>{{task.est_complete_time}}</h3>
-   <h3>{{task.complete_by}}</h3>
+ <button ng-click="openShowTask(task.id)">Show Task Details</button>
+ <button ng-click="deleteTask(task)">Delete</button>
  </div> <!-- tasks ng-repeat div end-->
  <button ng-click="openAddTask()">Add a Task</button>
 </div> <!-- task index box end-->
