@@ -4,8 +4,10 @@
 <div class="row"> <!-- div row of indexes beggining -->
 <div class="col-md-4 lists-index-box" ng-controller="listsController"> <!-- list index box start-->
   <h3><u>The Mother List</u></h3>
+  Search By Name:<input type='text' ng-model='s.name'>
+
   <button ng-click="openAddList()">Add a List</button>
-    <div ng-repeat="list in lists"> <!-- lists ng-repeat div beggining-->
+    <div ng-repeat="list in lists| filter:s"> <!-- lists ng-repeat div beggining-->
    <a ng-click="openShowItem(list)"><h3>{{ list.name}}</h3></a>  
    <button ng-click="openAddItem(list.id)">Add Items to list</button>
    <button ng-click="deleteList(list)">Delete</button>
