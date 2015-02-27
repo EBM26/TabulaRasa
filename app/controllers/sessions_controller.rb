@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   end
   
-  def create  
+  def create  # creates a new session for the user
 
     user = User.find_by(email: params[:user][:email])
 
@@ -12,12 +12,11 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id.to_s
       redirect_to root_path
     else
-      puts "We're in the else block"
       redirect_to signup_login_path 
     end   
   end
 
-  def destroy
+  def destroy # destroys users session, in other words, logs out
    session[:user_id] = nil
    redirect_to signup_login_path
  end

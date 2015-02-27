@@ -3,7 +3,7 @@ module Api
     
     def index # shows all items 
       
-      items = Item.where(list_id: params[:list_id]) 
+      items = Item.where(list_id: params[:list_id]) # finds items in a specific list
       render json: items
     end
     
@@ -16,7 +16,7 @@ module Api
     def create # creates an item that belongs to a particular list
       
       list = List.find(params[:list_id])
-      list.items << Item.new(item_params)
+      list.items << Item.new(item_params) # pushes items to list
 
       if list.save
         render json: list

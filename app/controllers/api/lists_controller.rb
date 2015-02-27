@@ -3,10 +3,11 @@ module Api
 
     def index # indexes all of the lists
 
-      lists = List.where(user_id: current_user.id)
+      lists = List.where(user_id: current_user.id) # shows lists that belong to proper user
       render json: lists, 
-          include: {items: {}} # if you dont want to see items in list index delete this include block and the comma
+          include: {items: {}} 
     end
+
 
     def show # shows an individual list
       
@@ -18,7 +19,7 @@ module Api
     def create # creates a new list
 
       list = List.new(list_params)
-      list.user = current_user
+      list.user = current_user # saves that list to a specific user
       if list.save
         render json: list
 
@@ -48,9 +49,10 @@ module Api
     def list_params # shorthand for list params
       params.require(:list).permit(:name)
     end
+
+    
   end
 end
-
 
 
 

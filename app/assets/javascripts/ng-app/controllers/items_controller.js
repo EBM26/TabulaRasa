@@ -1,14 +1,14 @@
 angular 
-  .module("tabulaApp")
-  .factory("Item", ["$resource", function ($resource) {
-    return $resource('/api/lists/:list_id/items', {list_id: '@id'},
+  .module("tabulaApp") // app name
+  .factory("Item", ["$resource", function ($resource) {  // factory to hold item code
+    return $resource('/api/lists/:list_id/items', {list_id: '@id'}, // the resource that angular gets the rails api from 
         {
-          'update': { method: 'PUT'}
+          'update': { method: 'PUT'} // customized angular edit method
         }
       );
   }]);
 
-angular
+angular // controller that shows item index with the list id special to it
   .module("tabulaApp")
   .controller("itemsController", ["$scope", "$http", "$resource", "$state", "Item","$modalInstance", "list_id", function ($scope, $http, $resource, $state, Item, $modalInstance, list_id) {
     Item.query({ list_id: list_id },function(data){
@@ -19,16 +19,16 @@ angular
   }]);
 
   angular
-    .module("tabulaApp")
+    .module("tabulaApp") // controller that creates a new item according to the list id
     .controller("newItemController", ["$scope", "$http", "$state", "$resource", "$stateParams", "Item","$modalInstance", "list_id", function ($scope, $http, $state, $resource, $stateParams, Item, $modalInstance, list_id){
 
       $scope.createItem = function() {
-        $scope.item.list_id = list_id;
+        $scope.item.list_id = list_id; // connects item to list id
 
         new Item (
           $scope.item
-        ).$save({ list_id: list_id}, function(data) {
-          $modalInstance.dismiss('created');
+        ).$save({ list_id: list_id}, function(data) { // saves to the appropriate list id
+          $modalInstance.dismiss('created'); // closes the modal after the item is created
         });
       }
     }]);

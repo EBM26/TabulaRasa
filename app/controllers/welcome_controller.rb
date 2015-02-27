@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  def new
+  def new # allows the welcome page to be routed
     
   end
   
