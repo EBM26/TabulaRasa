@@ -1,7 +1,7 @@
 angular 
   .module("tabulaApp") // app name
   .factory("Item", ["$resource", function ($resource) {  // factory to hold item code
-    return $resource('/api/lists/:list_id/items', {list_id: '@id'}, // the resource that angular gets the rails api from 
+    return $resource('/api/lists/:list_id/items/:id', {list_id: '@list_id', id: '@id' }, // the resource that angular gets the rails api from 
         {
           'update': { method: 'PUT'} // customized angular edit method
         }
@@ -11,10 +11,20 @@ angular
 angular // controller that shows item index with the list id special to it
   .module("tabulaApp")
   .controller("itemsController", ["$scope", "$http", "$resource", "$state", "Item","$modalInstance", "list_id", function ($scope, $http, $resource, $state, Item, $modalInstance, list_id) {
+   
+
     Item.query({ list_id: list_id },function(data){
         $scope.items = data;
 
     });
+
+    $scope.deleteItem = function(item) {
+      item.$delete({ list_id: list_id, id: item.id }, function(){
+        Item.query({ list_id: list_id}, function(data){
+          $scope.items = data;
+        });
+      });
+    }
 
   }]);
 
