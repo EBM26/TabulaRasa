@@ -3,7 +3,7 @@ module Api
 
     def index # indexes all of the lists
 
-      lists = List.all
+      lists = List.where(user_id: current_user.id)
       render json: lists, 
           include: {items: {}} # if you dont want to see items in list index delete this "include and the comma"
     end
@@ -18,6 +18,7 @@ module Api
     def create # creates a new list
 
       list = List.new(list_params)
+      list.user = current_user
       if list.save
         render json: list
 
