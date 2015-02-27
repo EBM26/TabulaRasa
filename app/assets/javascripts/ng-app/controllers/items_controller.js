@@ -10,15 +10,16 @@ angular
 
 angular // controller that shows item index with the list id special to it
   .module("tabulaApp")
-  .controller("itemsController", ["$scope", "$http", "$resource", "$state", "Item","$modalInstance", "list_id", function ($scope, $http, $resource, $state, Item, $modalInstance, list_id) {
+  .controller("itemsController", ["$scope", "$http", "$resource", "$state", "Item","$modalInstance", "list", function ($scope, $http, $resource, $state, Item, $modalInstance, list) {
    
-
-    Item.query({ list_id: list_id },function(data){
+    $scope.list = list;
+    Item.query({ list_id: list.id },function(data){
         $scope.items = data;
 
     });
 
-    $scope.deleteItem = function(item) {
+    // deletes the specific itemw
+    $scope.deleteItem = function(item) { 
       item.$delete({ list_id: list_id, id: item.id }, function(){
         Item.query({ list_id: list_id}, function(data){
           $scope.items = data;

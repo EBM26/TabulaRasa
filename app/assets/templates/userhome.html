@@ -6,7 +6,7 @@
   <h3><u>The Mother List</u></h3>
   <button ng-click="openAddList()">Add a List</button>
     <div ng-repeat="list in lists"> <!-- lists ng-repeat div beggining-->
-   <a ng-click="openShowItem(list.id)"><h3>{{ list.name}}</h3></a>  
+   <a ng-click="openShowItem(list)"><h3>{{ list.name}}</h3></a>  
    <button ng-click="openAddItem(list.id)">Add Items to list</button>
    <button ng-click="deleteList(list)">Delete</button>
 

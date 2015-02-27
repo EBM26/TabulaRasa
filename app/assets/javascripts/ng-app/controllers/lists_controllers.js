@@ -20,7 +20,7 @@ angular // controller that shows the list index. The array of arguments with quo
         $rootScope.lists = data; // $rootScope allows the the lists array method to be accessed in the second controller in order to have the created list show right away
     });
 
-    $scope.deleteList = function(list) {
+    $scope.deleteList = function(list) { // deletes list and all the items inside of it
       list.$delete(function(){
         List.query(function(data){
           $rootScope.lists = data;
@@ -28,7 +28,7 @@ angular // controller that shows the list index. The array of arguments with quo
       });
     }
 
-    $scope.openAddList = function() {
+    $scope.openAddList = function() { // modal code that adds new list
       $modal.open({
         templateUrl: 'lists/new.html',
         controller: "newListController"
@@ -47,13 +47,13 @@ angular // controller that shows the list index. The array of arguments with quo
     });
   };
 
-      $scope.openShowItem = function(id) { // modal code that shows the items inside each list
+      $scope.openShowItem = function(list) { // modal code that shows the items inside each list
         $modal.open({
           templateUrl: 'items/show.html', // the modal template
           controller: 'itemsController', // the controller the modal is using
-          resolve: {
-            list_id: function(){
-              return id;
+          resolve: {                    // allows data to be passed to the model from a different controller than the one it is was opened from
+            list: function(){
+              return list;
             }
           }
         });
