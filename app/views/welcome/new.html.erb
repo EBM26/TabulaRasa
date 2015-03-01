@@ -1,28 +1,41 @@
-<h1>Welcome, you made it!</h1>
+<h1 class="text-center">With all the thoughts that run throught our minds....</h1>
 
-<%= form_for :user, url: "/signup/login" do |f| %>
-   
-        <%= f.text_field :name, placeholder: 'enter your name' %><br>
-        <%= f.text_field :email, placeholder: 'enter your email' %><br>
-        <%= f.password_field :password, placeholder: 'password' %><br>
-        <%= f.password_field :password_confirmation, placeholder: 'confirm your password' %><br></br>
-        <%= button_tag(type: 'submit') do %>
-        <p>Sign Me Up!</p>
-        <% end %>
-
-        <% end %>
-
-
-        <div>
-    <div>
-      <%= form_for :user, url: "/login" do |f| %>
-
-      <%= f.text_field :email, placeholder: 'enter your email' %><br>
-      <%= f.password_field :password, placeholder: 'password' %><br>
-      <%= button_tag(type: 'submit') do %>
-      <p>Log Me In!</p>
-      <% end %>
-
-      <% end %>
-    </div>
+<section class="module parallax parallax-1">
+  <div class="container">
   </div>
+</section>
+
+<section class="module content">
+  <div class="container">
+    <h2>Sometimes we feel like this...</h2>
+  </div>
+</section>
+
+<section class="module parallax parallax-2">
+  <div class="container">
+  </div>
+</section>
+
+<section class="module content">
+  <div class="container">
+    <h2>Time to get on the path to serenity...</h2>
+  </div>
+</section>
+
+<section class="module parallax parallax-3">
+  <div class="container">
+  </div>
+</section>
+
+
+<section class="module content">
+  <div class="container">
+    <h2>Sign up or Login Totally Free!</h2>
+    <p class="last-p">This is your chance to put your mind at ease and your life in order...</p>
+  </div>
+</section>
+
+
+
+
+<%= render 'signup' %>

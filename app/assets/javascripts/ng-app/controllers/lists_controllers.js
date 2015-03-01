@@ -68,6 +68,11 @@ angular // controller that shows the list index. The array of arguments with quo
                                       function ($rootScope, $scope, $http, $state, $resource, $stateParams, List, $modalInstance){
 
       $scope.createList = function() {
+
+        if ($scope.list.name == null) {
+            $scope.nameFlash = "name field cannot be blank";
+        };
+
         new List (
           $scope.list
         ).$save(function(data) {

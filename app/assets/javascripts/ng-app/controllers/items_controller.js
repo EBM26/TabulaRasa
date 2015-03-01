@@ -36,6 +36,10 @@ angular // controller that shows item index with the list id special to it
       $scope.createItem = function() {
         $scope.item.list_id = list_id; // connects item to list id
 
+        if ($scope.item.name == null) {
+            $scope.nameFlash = "name field cannot be left empty";
+        };
+
         new Item (
           $scope.item
         ).$save({ list_id: list_id}, function(data) { // saves to the appropriate list id

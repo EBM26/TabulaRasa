@@ -3,19 +3,19 @@
   <form ng-submit="createTask()">
     <p>
       Name:
-      <input type="text" name="name" ng-model="task.name">
+      <input type="text" name="name" ng-model="task.name"> {{nameFlash}}
     </p>
     <p>
       Description:
-      <input type="text" name="description" ng-model="task.description">
+      <input type="text" name="description" ng-model="task.description"> {{descFlash}}
     </p>
     <p>
       Estimated Completion Time:
-      <input type="number" step="any" name="est_complete_time" ng-model="task.est_complete_time">
+      <input type="number" step="any" name="est_complete_time" ng-model="task.est_complete_time"> {{compFlash}}
     </p>
     <p>
       Date Completed By:
-      <input type="date" name="complete_by" ng-model="task.complete_by">
+      <input type="date" name="complete_by" ng-model="task.complete_by"> {{ dateFlash}}
     </p>
      <button>Create</button>
   </form> 

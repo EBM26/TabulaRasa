@@ -1,0 +1,48 @@
+<div class="container"> <!-- div beginning of entire page -->
+  <div class="row"> <!-- div beginning of row -->
+
+   <div class="col-md-5 signup-box form-group"> <!-- div beginning of signup box -->
+   <h2 class="text-center">Sign Up</h2><br><br>
+  <%= form_for :user, url: "/signup/login" do |f| %>
+   
+        <%= f.text_field :name, class: 'form-control', placeholder: 'enter your name' %><br>
+        <%= f.text_field :email, class: 'form-control', placeholder: 'enter your email' %><br>
+        <%= f.password_field :password, class: 'form-control', placeholder: 'password' %><br>
+        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'confirm your password' %><br></br>
+
+        <div class="text-center"> <!-- button div beginning -->
+        <%= button_tag(type: 'submit', class: "btn btn-primary welcome-button") do %>
+        <p>Sign Me Up!</p>
+        <% end %>
+
+        <% end %>
+        </div><!-- button div end -->
+
+   </div> <!-- div end of signup box -->
+
+   <div class="col-md-2">
+     
+   </div>
+
+
+    <div class="col-md-5 login-box form-group"> <!-- div beginning of login box -->
+    <h2 class="text-center">Login</h2><br><br>
+      <%= form_for :user, url: "/login" do |f| %>
+
+      <%= f.text_field :email, class: 'form-control', placeholder: 'enter your email' %><br>
+      <%= f.password_field :password, class: 'form-control',placeholder: 'password' %><br>
+      <div class="text-center"> <!-- button div beginning -->
+      <%= button_tag(type: 'submit', class: "btn btn-success welcome-button") do %>
+      <p>Log Me In!</p>
+      <% end %>
+
+      <% end %>
+
+      </div><!-- button div end -->
+
+
+    </div> <!-- div end of signup box -->
+
+  </div> <!-- div end of rows -->
+
+</div> <!-- div end of entire page -->
