@@ -38,13 +38,13 @@ section.module.parallax h1 {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 section.module.parallax-1 {
-  background-image: url("populatedBlackboard.jpg");
+  background-image: image-url("populatedBlackboard.jpg");
 }
 section.module.parallax-2 {
-  background-image: url("frustration.jpg");
+  background-image: image-url("frustration.jpg");
 }
 section.module.parallax-3 {
-  background-image: url("roadtofreedom.jpg");
+  background-image: image-url("roadtofreedom.jpg");
 }
 
 @media all and (min-width: 600px) {
@@ -66,6 +66,7 @@ section.module.parallax-3 {
 h1 {
   color: red;
   font-family: cursive;
+  font-size: 52px;
 }
 
 .last-p {
