@@ -29,13 +29,14 @@ angular
       $modal.open({
         templateUrl: 'tasks/new.html',
         controller: 'newTaskController',
-        windowClass: 'addTaskModal'
+        windowClass: 'addModal'
       });
     };
     $scope.openShowTask = function(id) { // modal that shows a specific task
       $modal.open({
         templateUrl: 'tasks/show.html',
         controller: 'showTasksController',
+        windowClass: 'addModal',
         resolve: {
           task_id: function () {
             return id;

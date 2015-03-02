@@ -32,7 +32,7 @@ angular // controller that shows the list index. The array of arguments with quo
       $modal.open({
         templateUrl: 'lists/new.html',
         controller: "newListController",
-        windowClass: 'addListModal'
+        windowClass: 'addModal'
       });
     };
 

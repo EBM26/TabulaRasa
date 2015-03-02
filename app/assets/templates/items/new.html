@@ -1,19 +1,15 @@
-<div> <!-- new tasks ng-controller div beggining-->
-<h3>Add an Item</h3>
-  <form ng-submit="createItem()">
-    <p>
-      Name:
-      <input type="text" name="name" ng-model="item.name"> {{nameFlash}}
-    </p>
-    <p>
-      Description:
-      <input type="text" name="description" ng-model="item.description">
-    </p>
-    <p>
-      Date Completed By:
-      <input type="date" name="complete_by" ng-model="item.complete_by">
-    </p>
-     <button>Create</button>
+<div class="add-items-box text-center"> <!-- new tasks ng-controller div beggining-->
+<h3 class="add-item">Add an Item</h3>
+  <form ng-submit="createItem()" class="form-group">
+      <input type="text" name="name" ng-model="item.name", class="form-control text-center", placeholder="Enter a new item name"><br> 
+   
+      <input type="text" name="description" ng-model="item.description", class="form-control text-center", placeholder="Enter the item descritption (optional)"><br>
+    
+      <input type="text" name="notes" ng-model="item.notes", class="form-control text-center", placeholder="Enter additional notes (optional)"><br>
+
+      <input type="text" name="link" ng-model="item.link", class="form-control text-center", placeholder="Enter a useful link (optional)"><br>
+
+     <button class="btn btn-warning add-new-button">Create</button>
   </form> 
 </div> <!-- new tasks ng-controller div end-->
 

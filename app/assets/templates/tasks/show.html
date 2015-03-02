@@ -1,6 +1,6 @@
-<h3><u>Your Daily Tasks</u></h3>
-   <h3>{{task.name}}</h3>
-   <h3>{{task.description}}</h3>
-   <h3>{{task.est_complete_time}}</h3>
-   <h3>{{task.complete_by}}</h3>
-
+<div class="text-center showModal">
+<h2><u>{{task.name}}</u></h2>
+   <h3><u>Description</u> : {{task.description}}</h3>
+   <h3><u>Time</u> : Should take me {{task.est_complete_time}} minutes</h3>
+   <h3><u>Due</u> : Should be completed by <u>{{task.complete_by | date: "MM/dd/yy"}}</u></h3>
+</div>
