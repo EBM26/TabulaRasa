@@ -2,11 +2,13 @@
 <html>
 <head>
   <title>TabulaRasa</title>
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  
 </head>
-<!--<header><link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico"></header> -->
+
 <body ng-app="tabulaApp">
 <div class="text-right">
 <button type="button" class="btn btn-default login-button">
