@@ -11,7 +11,7 @@
 
 <body ng-app="tabulaApp">
 <div class="text-right">
-<button type="button" class="btn btn-default login-button">
+<button type="button" class="btn btn-default login-button" id='button'>
 <% if current_user %> <!-- login button -->
   <%= "Logged in as " + current_user.name + ' | ' %><%= link_to 'Logout', logout_path %>
 
@@ -26,7 +26,7 @@
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
   <div class="container text-right">
-    <h4>Created by <em><u><a href="https://github.com/EBM26">EBM Masterpieces</a></u></em></h4>
+    <h4>Created by <em><u><a href="https://github.com/EBM26">EBM26</a></u></em></h4>
   </div>
 </nav>
 
