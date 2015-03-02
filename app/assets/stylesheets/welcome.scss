@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #3BB9FF;
+  background-color: #3BB9FF; // whatever you change your "body" background color to, change the background footer color as well
 }
 
 section.module:last-child {
@@ -85,8 +85,12 @@ h1 {
   font-size: 18px;
 }
 
-
-
+// css for fixed bottom navbar
+.navbar-default {
+  background-color: #3BB9FF;
+  border: 1px solid black;
+  color: red;
+}
 
 
 
