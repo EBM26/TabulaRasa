@@ -42,14 +42,15 @@ angular
           }
         }
       });
-    };
+    };   
+
   }]);
 
 angular // controller to get a specifict task
     .module("tabulaApp")
-    .controller("showTasksController", ["$scope", "$http", "$state", "$resource", "$stateParams", "Task", "$modalInstance", "task_id", function ($scope, $http, $state, $resource, $stateParams, Task, $modalInstance, task_id){
+    .controller("showTasksController", ["$scope", "$http", "$state", "$resource", "$stateParams", "Task", "$modalInstance", "task_id", 
+                                        function ($scope, $http, $state, $resource, $stateParams, Task, $modalInstance, task_id){
       $scope.task = Task.get({ id: task_id });
-
 
     }]);
 
@@ -88,7 +89,7 @@ angular // controller that creates a new task
     };
   }]);
 
-
+ 
 
 
 

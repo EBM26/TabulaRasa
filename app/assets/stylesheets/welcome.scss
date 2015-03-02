@@ -5,7 +5,7 @@
 
 }
 
-body {
+body { // may have to make this color specific just for the signup page
   background-color: #3BB9FF; // whatever you change your "body" background color to, change the background footer color as well
 }
 
@@ -90,6 +90,7 @@ h1 {
   background-color: #3BB9FF;
   border: 1px solid black;
   color: red;
+
 }
 
 
@@ -100,6 +101,7 @@ h1 {
   border: 2px solid black;
   padding: 3%;
   background-color: #B2ACAB;
+  margin-bottom: 10%;
 }
 
 .welcome-button {

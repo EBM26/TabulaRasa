@@ -31,7 +31,8 @@ angular // controller that shows the list index. The array of arguments with quo
     $scope.openAddList = function() { // modal code that adds new list
       $modal.open({
         templateUrl: 'lists/new.html',
-        controller: "newListController"
+        controller: "newListController",
+        windowClass: 'addListModal'
       });
     };
 
@@ -69,9 +70,6 @@ angular // controller that shows the list index. The array of arguments with quo
 
       $scope.createList = function() {
 
-        if ($scope.list.name == null) {
-            $scope.nameFlash = "name field cannot be blank";
-        };
 
         new List (
           $scope.list

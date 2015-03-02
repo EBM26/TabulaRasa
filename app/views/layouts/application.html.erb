@@ -11,7 +11,7 @@
 
 <body ng-app="tabulaApp">
 <div class="text-right">
-<button type="button" class="btn btn-default login-button" id='button'>
+<button type="button" class="btn btn-default login-button">
 <% if current_user %> <!-- login button -->
   <%= "Logged in as " + current_user.name + ' | ' %><%= link_to 'Logout', logout_path %>
 
