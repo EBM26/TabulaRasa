@@ -40,6 +40,7 @@ angular // controller that shows the list index. The array of arguments with quo
       $modal.open({
         templateUrl: 'items/new.html', // the modal template
         controller: 'newItemController', // the controller the modal is using
+        windowClass: 'addModal',
       resolve: {
         list_id: function () {
           return id;
@@ -52,6 +53,7 @@ angular // controller that shows the list index. The array of arguments with quo
         $modal.open({
           templateUrl: 'items/show.html', // the modal template
           controller: 'itemsController', // the controller the modal is using
+          windowClass: 'addModal',
           resolve: {                    // allows data to be passed to the model from a different controller than the one it is was opened from
             list: function(){
               return list;

@@ -1,11 +1,16 @@
+
+
 <div ng controller="listsController">
- <ul><h1>{{list.name}} List Items</h1></ul> 
-  </div>
+ <u><h2 class="showItems text-center">Items for the {{list.name}} List</h2></u> 
 </div>
-<div ng-repeat= "item in items">
-  <h3>Item Name</h3>
- {{item.name}}
-<h3>Item Description</h3>
-  {{item.description}}
-  <button ng-click="deleteItem(item)">Delete</button>
+
+<div ng-repeat= "item in items" class="itemList">
+
+  <h3 class="text-primary">{{$index+1}}. {{item.name}}  <button ng-click="deleteItem(item)" class="btn btn-danger item-button"><span class="glyphicon glyphicon-trash"></span></button></h3>
+ 
+  <h4 ng-show="item.notes" class="text-success"><span class="glyphicon glyphicon-pencil"></span> Additinal Notes: {{item.notes}}</h4>
+  
+ 
+ 
 </div>
+
