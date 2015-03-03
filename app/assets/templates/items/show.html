@@ -1,14 +1,14 @@
 
 
 <div ng controller="listsController">
- <u><h2 class="showItems text-center">Items for the {{list.name}} List</h2></u> 
+ <h2 class="showItems text-center"><u>items for the {{list.name}} list</u></h2> 
 </div>
 
 <div ng-repeat= "item in items" class="itemList">
 
   <h3 class="text-primary">{{$index+1}}. {{item.name}}  <button ng-click="deleteItem(item)" class="btn btn-danger item-button"><span class="glyphicon glyphicon-trash"></span></button></h3>
  
-  <h4 ng-show="item.notes" class="text-success"><span class="glyphicon glyphicon-pencil"></span> Additinal Notes: {{item.notes}}</h4>
+  <h4 ng-show="item.notes" class="text-success"><span class="glyphicon glyphicon-pencil"></span><u>Additinal Notes</u>: {{item.notes}}</h4>
   
  
  

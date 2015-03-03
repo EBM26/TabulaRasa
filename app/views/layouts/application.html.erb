@@ -11,14 +11,15 @@
 
 <body ng-app="tabulaApp">
 <div class="text-right">
-<button type="button" class="btn btn-default login-button">
-<% if current_user %> <!-- login button -->
-  <%= "Logged in as " + current_user.name + ' | ' %><%= link_to 'Logout', logout_path %>
 
+<% if current_user %> <!-- login button -->
+<button type="button" class="btn btn-default login-button">
+  <%= "Logged in as " + current_user.name + ' | ' %><%= link_to 'Logout', logout_path %>
+</button>
   <% else %>
-  <%= link_to 'Login', signup_login_path %> | <%= link_to 'Sign Up', signup_login_path %>
+<button type="button" class="btn btn-success login-button" id="button">Press Here to Log in or Signup </button>
   <% end %>
-  </button>
+  
  </div><br>
 
 
