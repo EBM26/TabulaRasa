@@ -45,6 +45,11 @@ angular
       });
     };   
 
+    $scope.overdue = function(task) { // code to turn complete by to the color red if its overdue
+      return Date.parse(task.complete_by) < Date.now(); 
+
+    }
+
   }]);
 
 angular // controller to get a specifict task

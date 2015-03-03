@@ -1,7 +1,9 @@
 // styling for userhome.html page
 
 .lists-index-box {
- background-image: image-url("BlueFire.jpg");
+    border: 2px solid black;
+    margin-bottom: 5%;
+    padding-bottom: 1%;
 }
 
 .tasks-index-box {
@@ -9,9 +11,15 @@
   border: 3px solid black;
 }
 
-.mantra-box {
-
-  border: 3px solid black;
-
+.search-words {
+  font-size: 24px;
 }
 
+.list-border {
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+  padding-bottom: 2%;
+}
+
+.overdue {
+  color: red;
+}

@@ -5,30 +5,39 @@
 <div class="container-fluid"> <!-- div of the entire page beginning -->
 <div class="row"> <!-- div row of indexes beginning -->
 <div class="col-md-4 col-md-offset-1 lists-index-box" ng-controller="listsController"> <!-- list index box start-->
-  <h2 class="text-center"><u>The Mother List</u></h2>
-  <h4 class="text-center">Search By Name:<input type='text' ng-model='s.name'></h4>
+  <h2 class="text-center"><u>The Mother List</u></h2><br>
 
-  <button ng-click="openAddList()">Add a List</button>
-    <div ng-repeat="list in lists | orderBy: 'name' | filter:s "> <!-- lists ng-repeat div beggining-->
-   <a ng-click="openShowItem(list)"><h3>{{$index+1}}. {{ list.name}}</h3></a>  
-   <button ng-click="openAddItem(list.id)">Add Items to list</button>
-   <button ng-click="deleteList(list)">Delete</button>
+  <h4 class="text-center"><span class="search-words">Search By Name: </span><input type='text' ng-model='s.name'></h4>
+
+  <button ng-click="openAddList()" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add a List</button>
+
+    <div ng-repeat="list in lists | orderBy: 'name' | filter:s " class="list-border"> <!-- lists ng-repeat div beggining-->
+   <a ng-click="openShowItem(list)"><h3>{{$index+1}}. {{ list.name}}</h3></a> 
+
+   <div class="text-right"> <!-- div that moves add items and delete to the right -->
+   <button ng-click="openAddItem(list.id)" class="btn btn-success add-item-button"><span class="glyphicon glyphicon-plus"></span> Add Items to list</button>
+   <button ng-click="deleteList(list)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+   </div> <!-- end of add items and delete div-->
 
    </div> <!-- lists ng-repeat div end-->
 </div> <!-- list index box finish-->
 
 <div class=" col-md-2"> <!-- mantra div box beginning -->
-  <p>Insert your mantra here</p>
-  <p>Insert your background picture here</p>
+
 </div> <!-- mantra div box end -->
 
 <div class="col-md-4 tasks-index-box" ng-controller="tasksController"> <!-- task index box start-->
-<h3><u>Your Daily Tasks</u></h3>
-<button ng-click="openAddTask()">Add a Task</button>
- <div ng-repeat="task in tasks | orderBy: 'complete_by'"> <!-- tasks ng-repeat div beggining-->
+<h2 class="text-center"><u>Your Important Tasks</u></h2 class="text-center"><br>
+
+<button class="btn btn-success" ng-click="openAddTask()"><span class="glyphicon glyphicon-plus"></span> Add a Task</button>
+ <div ng-repeat="task in tasks | orderBy: 'complete_by'" class="list-border"> <!-- tasks ng-repeat div beggining-->
    
  <h3><a ng-click="openShowTask(task.id)">{{$index+1}}. {{task.name}}</a></h3>
- <button ng-click="deleteTask(task)">Task Complete</button>
+ <h4 ng-class="{overdue: overdue(task)}" class="text-primary">Complete by: {{task.complete_by | date: "MM/dd/yy"}}</h4>
+ <div class="text-right"> <!-- complete button div -->
+ <button ng-click="deleteTask(task)" class="btn btn-danger"><span class="glyphicon glyphicon-ok"></span> Task Complete or Erase Task <span class="glyphicon glyphicon-trash"></span></button>
+ </div> <!-- end of complete button div -->
+
  </div> <!-- tasks ng-repeat div end-->
 </div> <!-- task index box end-->
 
