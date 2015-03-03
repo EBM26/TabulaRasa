@@ -1,18 +1,15 @@
 // styling for userhome.html page
 
-.lists-index-box {
-    border: 2px solid black;
+.index-box {
+    
     margin-bottom: 5%;
     padding-bottom: 1%;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
-.tasks-index-box {
-
-  border: 3px solid black;
-}
 
 .search-words {
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .list-border {
@@ -23,3 +20,35 @@
 .overdue {
   color: red;
 }
+  
+.userbody {
+      background: url('beach.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+.index-words {
+  color: black;
+}
+
+.home-title {
+    color: #FFF380;
+}
+
+.home-h2 {
+  color: #FFF380;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 40px;
+
+}
+
+.index-title {
+
+}
+
+
+
+

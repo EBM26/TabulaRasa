@@ -33,8 +33,4 @@ require 'rails_helper'
     expect(task).to be_invalid
    end
 
-   it "requires a status" do 
-     task.status = nil
-     expect(task).to be_invalid
-   end
 end

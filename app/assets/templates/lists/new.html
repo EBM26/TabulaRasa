@@ -2,7 +2,8 @@
 <h3 class="add-list">Add a List:</h3>
   <form ng-submit="createList()" class="form-group">
    
-      <input type="text" name="name" ng-model="list.name" class="form-control text-center", placeholder="Enter new list name">
-    <button class="btn btn-success add-new-button">Create</button>
+      <input type="text" name="name" ng-model="list.name" class="form-control text-center", placeholder="Enter new list name" required ng-change="errormessage= ''">
+    <button class="btn btn-success add-new-button">Create</button> 
+    {{errormessage}}
   </form>
 </div> <!-- add list box end -->

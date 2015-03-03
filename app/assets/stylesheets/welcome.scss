@@ -5,9 +5,11 @@
 
 }
 
-.welcome-body { // may have to make this color specific just for the signup page
-  background-color: rgba(78, 193, 255, 0.4); // whatever you change your "body" background color to, change the background footer color as well
+#welcome-body { // may have to make this color specific just for the signup page
+  background-color: rgba(21, 27, 84, 1); // whatever you change your "body" background color to, change the background footer color as well
+
 }
+
 
 section.module:last-child {
   margin-bottom: 0;
@@ -16,6 +18,7 @@ section.module h2 {
   margin-bottom: 40px;
   font-family: "Roboto Slab", serif;
   font-size: 30px;
+  color: #00FFFF;
 }
 
 section.module.content {
@@ -50,7 +53,8 @@ section.module.parallax-3 {
 @media all and (min-width: 600px) {
   section.module h2 {
     font-size: 42px;
-    color: red;
+    color: #00FFFF;
+    font-family: 'Gloria Hallelujah', cursive;
   }
  
   section.module.parallax h1 {
@@ -64,14 +68,16 @@ section.module.parallax-3 {
 }
 
 h1 {
-  color: red;
-  font-family: cursive;
+  color: #00FFFF;
+  font-family: 'Gloria Hallelujah', cursive;
   font-size: 52px;
+
 }
 
 .last-p {
   font-size: 25px;
-  color: red;
+  color: #00FFFF;
+  font-family: 'Gloria Hallelujah', cursive;
 }
 
 
@@ -83,11 +89,13 @@ h1 {
 
 .login-button {
   font-size: 18px;
+  background-color: #7D0552;
+  color: white;
 }
 
 // css for fixed bottom navbar
 .navbar-default {
-  background-color: rgba(78, 193, 255, 0.4);
+  background-color: rgba(21, 27, 84, 1);
   border: 1px solid black;
   color: red;
 

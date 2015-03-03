@@ -58,6 +58,11 @@ angular // controller to get a specifict task
                                         function ($scope, $http, $state, $resource, $stateParams, Task, $modalInstance, task_id){
       $scope.task = Task.get({ id: task_id });
 
+       $scope.overdue = function(task) { // code to turn complete by to the color red if its overdue
+      return Date.parse(task.complete_by) < Date.now(); 
+
+    }
+
     }]);
 
 
@@ -68,23 +73,6 @@ angular // controller that creates a new task
                                     function ($rootScope, $scope, $http, $state, $resource, $stateParams, Task, $modalInstance){
 
     $scope.createTask = function(){
-
-      if ($scope.task.name == null) { // error code for task name field that cant be left empty
-          $scope.nameFlash =  "name field cannot be left empty";
-         }
-
-      else if ($scope.task.description == null) { // error code for task description field that cant be left empty 
-          $scope.descFlash = "description field cannot be left empty";
-
-         }
-
-      else if ($scope.task.est_complete_time == null) { // error code for task estimated completioin time field that cant be left empty
-          $scope.compFlash = "estimated completion time cannot be lef empty"
-      }  
-
-      else if ($scope.task.complete_by == null) { // error code for task complete by time field that cant be left empty
-          $scope.dateFlash = "complete by time cannot be left empty"
-      }
 
       new Task (
         $scope.task
