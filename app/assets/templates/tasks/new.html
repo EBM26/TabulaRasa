@@ -17,6 +17,10 @@
 
     
      <button class="btn btn-primary add-new-button">Create</button>
+
+     <!-- error message if user enters the same task name twice. The code is in the tasks controllere.js and the ng-show prevents the styled div from showing unless it hits the error -->
+    <div class="alert alert-danger flash" role="alert" ng-show="errorMessage"><span class="glyphicon glyphicon-alert"></span> {{errorMessage}} </div>
+
   </form> 
 </div> <!-- new tasks div end-->
 

@@ -78,8 +78,8 @@ angular // controller that shows the list index. The array of arguments with quo
         ).$save(function(data) {
           $modalInstance.dismiss('created');
           $rootScope.lists.push(data);
-        }, function(error){
-          $scope.errormessage = "list name already exists";
+        }, function(error){ // beginning of function that renders an error message if list name already exists 
+          $scope.errorMessage = "list already exists"; 
         });
       }
     }]);

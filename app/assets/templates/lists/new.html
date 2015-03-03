@@ -3,7 +3,10 @@
   <form ng-submit="createList()" class="form-group">
    
       <input type="text" name="name" ng-model="list.name" class="form-control text-center", placeholder="Enter new list name" required ng-change="errormessage= ''">
-    <button class="btn btn-success add-new-button">Create</button> 
-    {{errormessage}}
+    <button class="btn btn-success add-new-button">Create</button>
+
+    <!-- error message if user enters the same list name twice. The code is in the lists controllere.js and the ng-show prevents the styled div from showing unless it hits the error -->
+    <div class="alert alert-danger flash" role="alert" ng-show="errorMessage"><span class="glyphicon glyphicon-alert"></span> {{errorMessage}} </div>
+
   </form>
 </div> <!-- add list box end -->

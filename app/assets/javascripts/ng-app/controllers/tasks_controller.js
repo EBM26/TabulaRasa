@@ -79,6 +79,8 @@ angular // controller that creates a new task
       ).$save(function(data) {
         $modalInstance.dismiss('created'); // closes the modal after task is created
         $rootScope.tasks.push(data);
+      }, function(error){
+        $scope.errorMessage = "task already exists";
       });
     };
   }]);
