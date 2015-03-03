@@ -1,7 +1,7 @@
 <div class="add-items-box text-center"> <!-- new tasks ng-controller div beggining-->
 <h3 class="add-item">Add an Item</h3>
   <form ng-submit="createItem()" class="form-group">
-      <input type="text" name="name" ng-model="item.name", class="form-control text-center", placeholder="Enter a new item name" required><br> 
+      <input type="text" name="name" ng-model="item.name", class="form-control text-center", placeholder="Enter a new item name" required ng-change="errorMessage= ''"><br> 
    
       <input type="text" name="notes" ng-model="item.notes", class="form-control text-center", placeholder="Enter additional notes (optional)"><br>
 

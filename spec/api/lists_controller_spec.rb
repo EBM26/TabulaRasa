@@ -3,7 +3,6 @@ require "rails_helper"
 
 describe "Lists API", :type => :request do
 
-  session[:user_id] = "2"
   let(:request_headers) { { "Accept" => "application/json", "Content-type" => "application/json" } } # standard in every api controller rspec test
   let!(:list) { List.create(name: "friends to see")}
 

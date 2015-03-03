@@ -3,7 +3,7 @@
 
   <form ng-submit="createTask()" class="form-group">
 
-      <input type="text" name="name" ng-model="task.name", class="form-control text-center", placeholder="Enter a new task name" required><br>
+      <input type="text" name="name" ng-model="task.name", class="form-control text-center", placeholder="Enter a new task name" required ng-change="errorMessage= ''"><br>
 
       
       <input type="text" name="description" ng-model="task.description", class="form-control text-center", placeholder="Enter a new task description" required><br>
