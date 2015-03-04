@@ -1,4 +1,4 @@
-## TabulaRasa
+##TabulaRasa
 
 *This is an app I wrote while I was in General Assembly Web Development Immersive course in 2015. This app is a life organizer that allows a person to organize his daily events, tasks, and overall thoughts all in one app*
 
