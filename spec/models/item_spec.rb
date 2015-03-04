@@ -13,10 +13,6 @@ RSpec.describe Item, type: :model do
       expect(item).to be_invalid
     end
 
-    it "item is not valid if name is duplicated" do
-      item2 = Item.new(name: "first name")
-      expect(item2).to be_invalid
-    end
 
     it "responds to description" do 
       expect(item).to respond_to(:description)

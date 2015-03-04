@@ -18,7 +18,7 @@ angular // controller that shows item index with the list id special to it
 
     });
 
-    // deletes the specific itemw
+    // deletes the specific item
     $scope.deleteItem = function(item) { 
       item.$delete({ list_id: list.id, id: item.id }, function(){
         Item.query({ list_id: list.id}, function(data){
@@ -31,21 +31,22 @@ angular // controller that shows item index with the list id special to it
 
   angular
     .module("tabulaApp") // controller that creates a new item according to the list id
-    .controller("newItemController", ["$scope", "$http", "$state", "$resource", "$stateParams", "Item","$modalInstance", "list_id", function ($scope, $http, $state, $resource, $stateParams, Item, $modalInstance, list_id){
+    .controller("newItemController", ["$scope", "$http", "$state", "$resource", "$stateParams", "Item","$modalInstance", "list_id", "$rootScope", function ($scope, $http, $state, $resource, $stateParams, Item, $modalInstance, list_id, $rootScope){
 
       $scope.createItem = function() {
         $scope.item.list_id = list_id; // connects item to list id
 
-        if ($scope.item.name == null) {
-            $scope.nameFlash = "name field cannot be left empty";
-        };
+        // $scope.noGo = function(){
+        //    $scope.item.name;
+        //   var list = $rootScope.lists 
+        // }
 
         new Item (
           $scope.item
         ).$save({ list_id: list_id}, function(data) { // saves to the appropriate list id
           $modalInstance.dismiss('created'); // closes the modal after the item is created
         }, function(error){
-          $scope.errorMessage = "item already exists";
+          $scope.errorMessage = "item already exists"; // error message if user tries to duplicate name in list
         });
       }
     }]);
