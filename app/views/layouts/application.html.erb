@@ -12,28 +12,28 @@
 
 <% if current_user %> <!-- logged in button and body style if logged in -->
 <body ng-app="tabulaApp" class="userbody">
-<div class="text-right">
-<button type="button" class="btn btn-default login-button"><span class="glyphicon glyphicon-user"></span> 
-  <%= "Logged in as " + current_user.name + ' | ' %><%= link_to 'Logout', logout_path %>
-</button>
-</div>
+  <div class="text-right">
+    <button type="button" class="btn btn-default login-button"><span class="glyphicon glyphicon-user"></span> 
+      <%= "Logged in as " + current_user.name + ' | ' %><%= link_to 'Logout', logout_path %>
+    </button>
+  </div>
   <% else %>
 
-<body ng-app="tabulaApp" id="welcome-body"> <!-- not logged in button and body style -->
-<div class="text-right">
-<button type="button" class="btn btn-default login-button hvr-bounce-out" id="button"><span class="glyphicon glyphicon-hand-up"></span> Press Here to Log in or Signup </button>
-  <% end %>
-  </div><br>
+  <body ng-app="tabulaApp" id="welcome-body"> <!-- not logged in button and body style -->
+    <div class="text-right">
+      <button type="button" class="btn btn-default login-button hvr-bounce-out" id="button"><span class="glyphicon glyphicon-hand-up"></span> Press Here to Log in or Signup </button>
+      <% end %>
+    </div><br>
 
 
-<%= yield %>
+    <%= yield %>
 
-<!-- navbar bottom code -->
-<nav class="navbar navbar-default navbar-fixed-bottom">
-  <div class="container text-right">
-    <h4>Created by <em><u><a href="https://github.com/EBM26" class="hvr-pulse">EBM26</a></u></em> <span class="glyphicon glyphicon-knight"></span></h4>
-  </div>
-</nav>
+    <!-- navbar bottom code -->
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container text-right">
+        <h4>Created by <em><u><a href="https://github.com/EBM26" class="hvr-pulse">EBM26</a></u></em> <span class="glyphicon glyphicon-knight"></span></h4>
+      </div>
+    </nav>
 
-</body>
-</html>
+  </body>
+  </html>

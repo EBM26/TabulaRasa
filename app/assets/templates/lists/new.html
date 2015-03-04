@@ -1,12 +1,15 @@
 <div class="add-list-box text-center"> <!-- add list box start -->
-<h3 class="add-list">Add a List:</h3>
+
+  <h3 class="add-list">Add a List:</h3>
+
   <form ng-submit="createList()" class="form-group">
    
-      <input type="text" name="name" ng-model="list.name" class="form-control text-center", placeholder="Enter new list name" required ng-change="errorMessage= ''">
+    <input type="text" name="name" ng-model="list.name" class="form-control text-center", placeholder="Enter new list name" required ng-change="errorMessage= ''">
     <button class="btn btn-success add-new-button hvr-float-shadow">Create</button>
 
     <!-- error message if user enters the same list name twice. The code is in the lists controllere.js and the ng-show prevents the styled div from showing unless it hits the error -->
     <div class="alert alert-danger flash" role="alert" ng-show="errorMessage"><span class="glyphicon glyphicon-alert"></span> {{errorMessage}} </div>
 
   </form>
+  
 </div> <!-- add list box end -->

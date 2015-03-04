@@ -1,26 +1,28 @@
 <div class="add-tasks-box text-center"> <!-- new tasks div beggining-->
-<h3 class="add-task">Add a Task</h3>
+
+  <h3 class="add-task">Add a Task</h3>
 
   <form ng-submit="createTask()" class="form-group">
 
-      <input type="text" name="name" ng-model="task.name", class="form-control text-center", placeholder="Enter a new task name" required ng-change="errorMessage= ''"><br>
-
-      
-      <input type="text" name="description" ng-model="task.description", class="form-control text-center", placeholder="Enter a new task description" required><br>
-   
-
-      <input type="text" step="any" name="est_complete_time" ng-model="task.est_complete_time", class="form-control text-center", placeholder="Enter the estimated completion time in minutes" required><br>
-    
-
-      <input type="date" name="complete_by" ng-model="task.complete_by", class="form-control text-center", placeholder="Enter the date the task should be completed by" required><br>
-
+    <input type="text" name="name" ng-model="task.name", class="form-control text-center", placeholder="Enter a new task name" required ng-change="errorMessage= ''"><br> <!-- ng-change allows the error message to go away once you change something in the input field-->
 
     
-     <button class="btn btn-primary add-new-button hvr-float-shadow">Create</button>
+    <input type="text" name="description" ng-model="task.description", class="form-control text-center", placeholder="Enter a new task description" required><br>
+    
 
-     <!-- error message if user enters the same task name twice. The code is in the tasks controllere.js and the ng-show prevents the styled div from showing unless it hits the error -->
+    <input type="text" step="any" name="est_complete_time" ng-model="task.est_complete_time", class="form-control text-center", placeholder="Enter the estimated completion time in minutes" required><br>
+    
+
+    <input type="date" name="complete_by" ng-model="task.complete_by", class="form-control text-center", placeholder="Enter the date the task should be completed by" required><br>
+
+
+    
+    <button class="btn btn-primary add-new-button hvr-float-shadow">Create</button>
+
+    <!-- error message if user enters the same task name twice. The code is in the tasks controllere.js and the ng-show prevents the styled div from showing unless it hits the error -->
     <div class="alert alert-danger flash" role="alert" ng-show="errorMessage"><span class="glyphicon glyphicon-alert"></span> {{errorMessage}} </div>
 
   </form> 
+  
 </div> <!-- new tasks div end-->
 

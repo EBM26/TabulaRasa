@@ -1,16 +1,16 @@
+<div ng controller="listsController"> <!-- allows page to access lists controller to get list name -->
 
-
-<div ng controller="listsController">
  <h2 class="showItems text-center"><u>items for the {{list.name}} list</u></h2> 
+
 </div>
 
 <div ng-repeat= "item in items" class="itemList  list-border">
 
   <h3 class="text-primary">{{$index+1}}. {{item.name}}</h3>
 
- <button ng-click="deleteItem(item)" class="btn btn-danger item-button"><span class="glyphicon glyphicon-trash"></span></button>
+  <button ng-click="deleteItem(item)" class="btn btn-danger item-button"><span class="glyphicon glyphicon-trash"></span></button>
 
   <h4 ng-show="item.notes" class="text-success"><span class="glyphicon glyphicon-pencil"></span><u>Additinal Notes</u>: {{item.notes}}</h4>
- 
+  
 </div>
 

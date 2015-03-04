@@ -1,6 +1,6 @@
 module Api
   class TasksController < ApplicationController
-  
+    
     def index # shows all of the tasks that were created 
       
       tasks = Task.where(user_id: current_user.id)
@@ -16,7 +16,7 @@ module Api
     def create #creates a new task
 
       task = Task.new(params.require(:task).permit(:name, :description, :est_complete_time, :complete_by, :status))
-      task.user = current_user
+      task.user = current_user # saves task to a specific user
       if task.save
         render json: task
       else

@@ -15,10 +15,10 @@ module Api
 
     def create # creates an item that belongs to a particular list
       
-      list = List.find(params[:list_id])
+      list = List.find(params[:list_id]) # finding the list id that the item will be created in
       list.items << Item.new(item_params) # pushes items to list
 
-      if list.save
+      if list.save # saves it to that particular list
         render json: list
       else
         render json: {errors: list.errors}, status: 422
@@ -33,8 +33,8 @@ module Api
         render json: item
       else
         render json: {errors: list.errors}, status: 422
+      end
     end
-  end
 
     def destroy # deletes an item
 

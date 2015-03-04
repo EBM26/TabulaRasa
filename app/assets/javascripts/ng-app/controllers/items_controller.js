@@ -2,21 +2,21 @@ angular
   .module("tabulaApp") // app name
   .factory("Item", ["$resource", function ($resource) {  // factory to hold item code
     return $resource('/api/lists/:list_id/items/:id', {list_id: '@list_id', id: '@id' }, // the resource that angular gets the rails api from 
-        {
+    {
           'update': { method: 'PUT'} // customized angular edit method
         }
-      );
+        );
   }]);
 
 angular // controller that shows item index with the list id special to it
-  .module("tabulaApp")
-  .controller("itemsController", ["$scope", "$http", "$resource", "$state", "Item","$modalInstance", "list", function ($scope, $http, $resource, $state, Item, $modalInstance, list) {
-   
-    $scope.list = list;
-    Item.query({ list_id: list.id },function(data){
-        $scope.items = data;
+.module("tabulaApp")
+.controller("itemsController", ["$scope", "$http", "$resource", "$state", "Item","$modalInstance", "list", function ($scope, $http, $resource, $state, Item, $modalInstance, list) {
+ 
+  $scope.list = list;
+  Item.query({ list_id: list.id },function(data){
+    $scope.items = data;
 
-    });
+  });
 
     // deletes the specific item
     $scope.deleteItem = function(item) { 
@@ -29,7 +29,7 @@ angular // controller that shows item index with the list id special to it
 
   }]);
 
-  angular
+angular
     .module("tabulaApp") // controller that creates a new item according to the list id
     .controller("newItemController", ["$scope", "$http", "$state", "$resource", "$stateParams", "Item","$modalInstance", "list_id", "$rootScope", function ($scope, $http, $state, $resource, $stateParams, Item, $modalInstance, list_id, $rootScope){
 
@@ -52,4 +52,4 @@ angular // controller that shows item index with the list id special to it
     }]);
 
 
- 
+    
