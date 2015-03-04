@@ -5,7 +5,7 @@
    
       <input type="text" name="notes" ng-model="item.notes", class="form-control text-center", placeholder="Enter additional notes (optional)"><br>
 
-     <button class="btn btn-warning add-new-button">Create</button>
+     <button class="btn btn-warning add-new-button hvr-float-shadow">Create</button>
 
      <!-- error message if user enters the same item name twice. The code is in the items controllere.js and the ng-show prevents the styled div from showing unless it hits the error -->
     <div class="alert alert-danger flash" role="alert" ng-show="errorMessage"><span class="glyphicon glyphicon-alert"></span> {{errorMessage}} </div>
