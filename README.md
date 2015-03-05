@@ -1,4 +1,4 @@
-##TabulaRasa
+##TabulaRasa <img src="favicon.ico">
 
 <a href="https://www.youtube.com/watch?v=W0ffzVqh5H4"><img src="https://ga-core-production-herokuapp-com.global.ssl.fastly.net/assets/ga-lockup-1788582934ade008a8ea6068b784b8ee.png"></a>
 
@@ -12,5 +12,5 @@ This app uses:
 
 -Twitter Bootstrap
 
--- [deployed app](https://tabularasaeyal.herokuapp.com/signup/login)
+-- [Go to app](https://tabularasaeyal.herokuapp.com/signup/login)
 
