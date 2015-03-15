@@ -12,6 +12,8 @@ This is an app I wrote while I was in General Assembly Web Development Immersive
 
 -Angular ui
 
+-PostgreSQL
+
 -Twitter Bootstrap
 
 
