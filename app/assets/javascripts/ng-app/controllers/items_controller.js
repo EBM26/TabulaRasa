@@ -10,13 +10,26 @@ angular
 
 angular // controller that shows item index with the list id special to it
 .module("tabulaApp")
-.controller("itemsController", ["$scope", "$http", "$resource", "$state", "Item","$modalInstance", "list", function ($scope, $http, $resource, $state, Item, $modalInstance, list) {
+.controller("itemsController", ["$scope", "$http", "$resource", "$state", "Item","$modal", "list", function ($scope, $http, $resource, $state, Item, $modal, list) {
  
   $scope.list = list;
   Item.query({ list_id: list.id },function(data){
     $scope.items = data;
 
   });
+
+    $scope.openAddItem = function(id) { // modal code that opens and creates new items
+      $modal.open({
+        templateUrl: 'items/new.html', // the modal template
+        controller: 'newItemController', // the controller the modal is using
+        windowClass: 'addModal',
+        resolve: {
+          list_id: function () {
+            return id;
+          }
+        }
+      });
+    };
 
     // deletes the specific item
     $scope.deleteItem = function(item) { 

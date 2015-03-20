@@ -36,18 +36,6 @@ angular // controller that shows the list index. The array of arguments with quo
       });
     };
 
-    $scope.openAddItem = function(id) { // modal code that opens and creates new items
-      $modal.open({
-        templateUrl: 'items/new.html', // the modal template
-        controller: 'newItemController', // the controller the modal is using
-        windowClass: 'addModal',
-        resolve: {
-          list_id: function () {
-            return id;
-          }
-        }
-      });
-    };
 
       $scope.openShowItem = function(list) { // modal code that shows the items inside each list
         $modal.open({
