@@ -13,6 +13,8 @@
 
       <button ng-click="openAddList()" class="btn btn-info hvr-curl-top-left"><span class="glyphicon glyphicon-plus"></span> Add a List</button>
 
+      <h4 class="text-right instructions">(click on list name to view)</h4>
+
       <div ng-repeat="list in lists | orderBy: 'name' | filter:s " class="list-border"> <!-- lists ng-repeat div beggining-->
        <a ng-click="openShowItem(list)" class="index-words"><h3>{{$index+1}}. {{ list.name}}</h3></a> 
 
