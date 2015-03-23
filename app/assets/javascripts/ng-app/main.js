@@ -14,14 +14,8 @@ angular
        .state("userhome",{
         url:"", 
         templateUrl: "userhome.html"
+       
        })
-      
-       .state("itemsnew", {
-          url:"/list/{listId}/items/new", // pay attention to the fact that this has list singular and not plural 
-          templateUrl: "items/new.html"
-
-        })
-
        ;
      }]);
 
