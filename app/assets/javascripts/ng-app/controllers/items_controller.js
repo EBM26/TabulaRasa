@@ -33,11 +33,13 @@ angular // controller that shows item index with the list id special to it
 
     // deletes the specific item
     $scope.deleteItem = function(item) { 
+      if (confirm("Are you sure you want to delete this item?")) {
       item.$delete({ list_id: list.id, id: item.id }, function(){
         Item.query({ list_id: list.id}, function(data){
           $scope.items = data;
         });
       });
+    }
     }
 
   }]);
@@ -48,11 +50,6 @@ angular
 
       $scope.createItem = function() {
         $scope.item.list_id = list_id; // connects item to list id
-
-        // $scope.noGo = function(){
-        //    $scope.item.name;
-        //   var list = $rootScope.lists 
-        // }
 
         new Item (
           $scope.item

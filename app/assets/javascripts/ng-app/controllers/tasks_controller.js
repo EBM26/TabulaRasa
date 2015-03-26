@@ -18,11 +18,13 @@ angular
     });
 
     $scope.deleteTask = function(task) { // function that deletes a task
-      task.$delete(function(){
-        Task.query(function(data){
-          $rootScope.tasks = data;
+      if (confirm("Are you sure you want to delete this task?")) {
+        task.$delete(function(){
+          Task.query(function(data){
+            $rootScope.tasks = data;
+          });
         });
-      });
+      }
     }
 
     $scope.openAddTask = function() { // modal that creates new tasks

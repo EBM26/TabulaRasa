@@ -21,11 +21,13 @@ angular // controller that shows the list index. The array of arguments with quo
       });
 
     $scope.deleteList = function(list) { // deletes list and all the items inside of it
-      list.$delete(function(){
-        List.query(function(data){
-          $rootScope.lists = data;
+      if (confirm("Are you sure you want to delete this list?")) {
+        list.$delete(function(){
+          List.query(function(data){
+            $rootScope.lists = data;
+          });
         });
-      });
+      }
     }
 
     $scope.openAddList = function() { // modal code that adds new list
