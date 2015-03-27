@@ -47,6 +47,7 @@ angular // controller that shows the list index. The array of arguments with quo
           resolve: {                    // allows data to be passed to the model from a different controller than the one it is was opened from
             list: function(){
               return list;
+            
             }
           }
         });

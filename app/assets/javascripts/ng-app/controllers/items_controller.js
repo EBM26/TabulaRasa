@@ -10,11 +10,12 @@ angular
 
 angular // controller that shows item index with the list id special to it
 .module("tabulaApp")
-.controller("itemsController", ["$scope", "$http", "$resource", "$state", "Item","$modal", "list", function ($scope, $http, $resource, $state, Item, $modal, list) {
+.controller("itemsController", ["$scope", "$rootScope", "$http", "$resource", "$state", "Item","$modal", "list", function ($scope, $rootScope, $http, $resource, $state, Item, $modal, list) {
  
   $scope.list = list;
   Item.query({ list_id: list.id },function(data){
-    $scope.items = data;
+    $rootScope.items = data;
+
 
   });
 
@@ -36,7 +37,7 @@ angular // controller that shows item index with the list id special to it
       if (confirm("Are you sure you want to delete this item?")) {
       item.$delete({ list_id: list.id, id: item.id }, function(){
         Item.query({ list_id: list.id}, function(data){
-          $scope.items = data;
+          $rootScope.items = data;
         });
       });
     }
@@ -55,6 +56,7 @@ angular
           $scope.item
         ).$save({ list_id: list_id}, function(data) { // saves to the appropriate list id
           $modalInstance.dismiss('created'); // closes the modal after the item is created
+          $rootScope.items.push($scope.item)
         }, function(error){
           $scope.errorMessage = "item already exists"; // error message if user tries to duplicate name in list
         });
